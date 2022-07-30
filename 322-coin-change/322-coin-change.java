@@ -22,22 +22,23 @@ class Solution {
         //dp[0].length first row length
         
         for(int j =1 ; j < dp[0].length; j++){
+            
             dp[0][j] = amount + 1;
         }
         
-        for(int i=1; i<dp.length; i++){
-            for(int j=1; j<dp[0].length; j++){
-                if(j<coins[i-1]){
+        for(int i=1; i<dp.length; i++){ // no of rows 
+            for(int j=1; j<dp[0].length; j++){ // no of columns
+                if(j<coins[i-1]){ // cloumn - coin i.e., till coin steps back -> copy the values from above row
                     dp[i][j] = dp[i-1][j];
                 }
                 else{
-                    dp[i][j]  = Math.min(dp[i-1][j], 1+dp[i][j-coins[i-1]]);
+                    dp[i][j]  = Math.min(dp[i-1][j], 1+dp[i][j-coins[i-1]]); // min of (above values) and (1+ coin steps back)
                 }
             }
            
         }
-         int result = dp[m][n];
-            if(result>amount) return -1;
+         int result = dp[m][n];  // end value of 2D array is our result 
+            if(result>amount) return -1; // if result is  infinity or amount + 
             return result;
         
         
