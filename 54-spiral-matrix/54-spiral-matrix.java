@@ -12,24 +12,21 @@ class Solution {
             
             
             //top row
-            if(top <= bottom && left <= right){
+
                 for(int j=left; j<= right ; j++){
                 result.add(matrix[top][j]);  
                }
-            }
             top++;
             
             //right column
-            if(top <= bottom && left <= right){
                  for(int i=top; i<= bottom ; i++){
                 result.add(matrix[i][right]);   
-                }
-             }
+              }
             right--;
             
             
             //bottom row
-            if(top <= bottom && left <= right){
+            if(top <= bottom){
                   for(int k=right; k >= left ; k--){
                 result.add(matrix[bottom][k]);  
                   }
@@ -37,7 +34,7 @@ class Solution {
             bottom--;
             
             //left column
-             if(top <= bottom && left <= right){
+             if(left <= right){
                  for(int l=bottom; l >= top ; l--){
                 result.add(matrix[l][left]);
                  }
