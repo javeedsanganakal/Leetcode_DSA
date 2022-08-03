@@ -11,8 +11,8 @@ class Solution {
         //1 ==> 0 ==> 2
         //0 ==> 1 ==> 3
         
-        //               top    bottom    left     right  topLeft   topRight   
-        dirs = new int[][]{{-1,0}, {1,0},  {0,-1},  {0,1},  {-1,-1},  {-1,1},   {1,-1},  {1,1} };
+        //                   top  bottom    left    right   topLeft   topRight  bottomLeft  bottomRight
+        dirs = new int[][]{{-1,0}, {1,0},  {0,-1},  {0,1},  {-1,-1},   {-1,1},    {1,-1},      {1,1} };
         
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
