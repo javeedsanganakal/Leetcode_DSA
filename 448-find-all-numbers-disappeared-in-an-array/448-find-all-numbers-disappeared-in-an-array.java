@@ -1,21 +1,26 @@
 class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
 
-        int n = nums.length;
+        List<Integer> result = new ArrayList<>();
         
-        List<Integer> missingNumbers = new ArrayList<Integer>();
-        HashSet<Integer> numbers = new HashSet<Integer>();
-        
-        for(int i:nums){
-            numbers.add(i);
-        }
-        
-        for(int i=1;i<=n;i++){
-            if(!(numbers.contains(i))){
-                missingNumbers.add(i);
+        //First Pass, make negative  
+        for(int i=0;  i<nums.length; i++){
+            int idx = Math.abs(nums[i])-1;
+            if(nums[idx] > 0){
+                nums[idx] = nums[idx] * -1;
             }
         }
-        return missingNumbers;
+    
+        //Secomd Pass, Find Missing and make all postive
+        for(int  i=0;  i<nums.length; i++){
+            if(nums[i] >0){
+                result.add(i+1);
+            }
+            else{
+                nums[i]  *=  -1;
+            }
+        }    
         
+        return result;   
     }
 }
