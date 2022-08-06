@@ -3,25 +3,22 @@ class Solution {
         
          if(matrix == null || matrix.length == 0) return false;
         
-         // return true;
         
-        int m = matrix.length; // 5
-        int n = matrix[0].length; //5
+        int m = matrix.length; // 5  rows
+        int n = matrix[0].length; //5 cols
+        
          
-        int i = m-1; // row = 0
-        int j = 0; // col = 5-1 = 4
+        int i = 0; // i = rows - 1 = m-1 = 5-1 = 4
+        int j = n-1; // j = cols = 0
             
-            while(i >= 0 && j < n){ //  // j >=0 => 
-                if(matrix[i][j] == target)  return true;
+            while(i < m && j >=0){ 
+                if(matrix[i][j] == target)  return true;             
                 
-                // if(matrix[i][j] == target) return true; // 15 != 15 
-                
-                if(matrix[i][j] > target){ //15< 5
-                    i--;
-                    // 5-1 => 4,3,2,1, 0 ===> j >=0
+                if(matrix[i][j] > target){ 
+                    j--;
+
                 }else{
-                    j++;
-                    //i < 5 => 0, 1, 2, 3, 4
+                    i++;
                 }
             }
             
