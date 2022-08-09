@@ -24,8 +24,8 @@ class Solution {
     private void inorder(TreeNode root){
         if(root == null)  return;
         //System.out.println(root.val);
-        
-        inorder(root.left);
+        if(flag)
+            inorder(root.left);
         //st.pop() root
         if( prev != null && prev.val >= root.val){
             flag = false;
