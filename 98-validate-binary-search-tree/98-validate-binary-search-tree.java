@@ -32,7 +32,9 @@ class Solution {
             return;
         }
         prev = root;
-        inorder(root.right);
+        
+        if(flag)
+            inorder(root.right);
         //st.po() root
           
     }
