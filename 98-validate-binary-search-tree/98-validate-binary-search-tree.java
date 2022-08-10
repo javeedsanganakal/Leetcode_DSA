@@ -13,30 +13,27 @@
  *     }
  * }
  */
+
+
+//void function to boolean
+
 class Solution {
     TreeNode prev;
-    boolean flag;
     public boolean isValidBST(TreeNode root) {  
-        flag=true;
-        inorder(root);
-        return flag;
+        return inorder(root);
     }
-    private void inorder(TreeNode root){
-        if(root == null)  return;
-        //System.out.println(root.val);
-        if(flag)
-            inorder(root.left);
-        //st.pop() root
+    private boolean inorder(TreeNode root){
+        if(root == null) return true;
+        
+        boolean left = inorder(root.left);
         if( prev != null && prev.val >= root.val){
-            flag = false;
-            return;
+
+            return false;
         }
         prev = root;
-        
-        if(flag)
-            inorder(root.right);
-        //st.po() root
-          
+        boolean right = inorder(root.right);
+
+         return left && right;
     }
     
 }
