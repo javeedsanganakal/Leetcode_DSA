@@ -31,7 +31,10 @@ class Solution {
             return false;
         }
         prev = root;
-        boolean right = inorder(root.right);
+        boolean right = true;
+        
+            if(left)
+                  right = inorder(root.right);
 
          return left && right;
     }
