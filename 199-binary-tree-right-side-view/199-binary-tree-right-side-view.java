@@ -36,11 +36,13 @@ class Solution {
         //depth of a tree and result list size, initially both 0 and 0, so add root
         if(depth == result.size()){
             result.add(root.val);
+        } else{
+            result.set(depth, root.val); //replace
         }
         
-        //we are moving towards the right side first
-        dfs(root.right, depth+1, result);
         dfs(root.left, depth+1, result);
+        dfs(root.right, depth+1, result);
+        
         
     }
 }
