@@ -44,7 +44,9 @@ class Solution {
             y_depth = depth;
         }
         
-        dfs(root.left, x,y, depth+1, root);
-        dfs(root.right, x,y, depth+1, root);
+        if(x_parent == null || y_parent == null)
+           dfs(root.left, x,y, depth+1, root);
+        if(x_parent == null || y_parent == null)
+           dfs(root.right, x,y, depth+1, root);
     }
 }
