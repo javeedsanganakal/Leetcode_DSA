@@ -13,6 +13,10 @@
  *     }
  * }
  */
+
+//TC = O(n)
+//SC = O(h)
+
 class Solution {
       TreeNode x_parent;
       TreeNode y_parent;
@@ -21,7 +25,6 @@ class Solution {
         
     public boolean isCousins(TreeNode root, int x, int y) {
         if(root == null) return false;
-        
         dfs(root, x, y, 0, root);
         return x_depth == y_depth && x_parent != y_parent;
     }
