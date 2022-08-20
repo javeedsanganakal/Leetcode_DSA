@@ -17,7 +17,7 @@
 //TC = O(n) 
 //SC = O(h)
 
-//Using BFS right side
+//Using DFS right side
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
         
