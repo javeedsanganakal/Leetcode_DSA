@@ -14,9 +14,11 @@
  * }
  */
 
-//TC = O(n)
-//SC = O(h)
+//TC = O(n)  No of nodes
+//SC = O(n)  width/ Breadth / max width = n/2=>n
 
+
+//BFS
 class Solution {
 
         
