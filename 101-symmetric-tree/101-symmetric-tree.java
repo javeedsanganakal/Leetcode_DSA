@@ -14,7 +14,7 @@
  * }
  */
 
-//BFS using Queue
+//BFS using Stack
 
 //TC = O(n)
 //SC = O(n)
