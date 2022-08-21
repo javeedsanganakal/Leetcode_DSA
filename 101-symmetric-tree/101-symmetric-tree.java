@@ -13,6 +13,9 @@
  *     }
  * }
  */
+
+//DFS 
+
 class Solution {
     boolean flag;
     public boolean isSymmetric(TreeNode root) {
@@ -37,9 +40,6 @@ class Solution {
         //st.pop
         dfs(left.right, right.left);
         //st.pop
-        
-        
-        
-        
+   
     }
 }
