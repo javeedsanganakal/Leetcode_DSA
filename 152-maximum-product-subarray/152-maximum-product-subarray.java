@@ -1,4 +1,6 @@
-
+//Approach - 1 :  max between 2 loops 
+//Time Complexity : O(n)
+//Space Complexity : O(1)
 class Solution {
     public int maxProduct(int[] nums) {
         
