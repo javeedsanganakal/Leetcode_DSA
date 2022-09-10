@@ -9,6 +9,9 @@
  */
 //Notes
 
+//Approach -  : Backtracking
+//Time Complexity : O(n)
+//Space Complexity : O(h)
 
 class Solution {
     List<TreeNode> pathP;
@@ -30,21 +33,21 @@ class Solution {
         //base
         if(root == null) return;
         
-        if(root == p){
-            pathP = new ArrayList<>(path);
-            pathP.add(root);
-            pathP.add(root);
-        }
-        if(root == q){
-            pathQ = new ArrayList<>(path);
-            pathQ.add(root);
-            pathQ.add(root);
-        }
+       
         
         //logic  
         //Backtracking
         //Action
         path.add(root);
+        
+         if(root == p){
+            pathP = new ArrayList<>(path);
+            pathP.add(root);
+        }
+        if(root == q){
+            pathQ = new ArrayList<>(path);
+            pathQ.add(root);
+        }
 
         //Recurse
         helper(root.left,  p, q, path);
