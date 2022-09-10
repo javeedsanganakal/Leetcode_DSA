@@ -1,3 +1,6 @@
+//Approach - 1 : Binary Search
+//Time Complexity : O(logn)
+//Space Complexity : O(1)
 class Solution {
     public int findMin(int[] nums) {
         int result = nums[0];
