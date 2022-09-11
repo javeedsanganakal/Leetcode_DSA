@@ -13,7 +13,12 @@
  *     }
  * }
  */
-//Nodes
+//Notes
+
+//Approach - 1 : Inoder and Swap the nodes
+//Time Complexity : O(n)
+//Space Complexity : O(h)
+
 class Solution {
     TreeNode prev;
     TreeNode first;
