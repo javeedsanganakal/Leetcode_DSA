@@ -14,6 +14,9 @@
  * }
  */
 
+//Approach - 1:  Recursion, Inorder and decrement count=k 
+//Time Complexity : o(n)
+//Space Complexity : O(h)
 class Solution {
     int count;
     int result;
