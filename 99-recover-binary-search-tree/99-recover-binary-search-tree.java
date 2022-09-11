@@ -15,7 +15,7 @@
  */
 //Notes
 
-//Approach - 1 : Inoder and Swap the nodes
+//Approach - 1 : Iterative by using Stack, Inoder and Swap the nodes
 //Time Complexity : O(n)
 //Space Complexity : O(h)
 
@@ -36,14 +36,16 @@ class Solution {
     }
     
     private void inorder(TreeNode root){
-        //base
-        if(root == null) return;
+
         
-        
-        //logic
-        inorder(root.left);
-        
-        //breach happens
+        Stack<TreeNode> st = new Stack<>();
+        while(!st.isEmpty() || root != null){
+            while(root != null){
+                st.push(root);
+                root = root.left;
+            }
+            root = st.pop(); 
+                  //breach happens
         if(prev != null && prev.val > root.val){
             //first breach
             if(!flag){ 
@@ -57,8 +59,10 @@ class Solution {
         }
         
         prev = root;
-        inorder(root.right);
-        
-       
+        root = root.right;
+        }
+
+  
+  
     }
 }
