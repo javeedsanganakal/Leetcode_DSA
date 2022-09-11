@@ -29,7 +29,6 @@ class Solution {
     
         //logic
         st.push(root);
-
         inorder(root.left);
         result.add(st.pop().val);
         inorder(root.right);
