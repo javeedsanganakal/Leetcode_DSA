@@ -9,13 +9,15 @@
  */
 //Notes
 
-//Approach -  : Backtracking
+//Approach -  2 : Backtrack, Flag
 //Time Complexity : O(n)
 //Space Complexity : O(h)
 
 class Solution {
     List<TreeNode> pathP;
     List<TreeNode> pathQ;
+    boolean flagP;
+    boolean flagQ;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null) return null;
         helper(root, p, q, new ArrayList<>());
@@ -41,18 +43,23 @@ class Solution {
         path.add(root);
         
          if(root == p){
+            flagP = true;
             pathP = new ArrayList<>(path);
             pathP.add(root);
         }
         if(root == q){
+            flagQ = true;
             pathQ = new ArrayList<>(path);
             pathQ.add(root);
         }
-
+        
+        //If both are found on left or right no need to go other side
         //Recurse
-        helper(root.left,  p, q, path);
+        if(!flagP || !flagQ)
+            helper(root.left,  p, q, path);
         //st pop
-        helper(root.right, p, q, path);
+        if(!flagP || !flagQ)
+          helper(root.right, p, q, path);
         //st pop
         
         //BackTrack
