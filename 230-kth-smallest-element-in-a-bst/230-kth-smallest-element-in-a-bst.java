@@ -20,7 +20,6 @@
 class Solution {
     int count;
     int result;
-    boolean flag;
     public int kthSmallest(TreeNode root, int k) {
         if(root == null) return -1;
         count = k;
