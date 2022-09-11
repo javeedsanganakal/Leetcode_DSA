@@ -14,7 +14,7 @@
  * }
  */
 
-//Approach - 1:  Conditinal Recursive calls, Inorder and decrement count=k 
+//Approach - 2:  Conditinal Recursive calls, Inorder and decrement count=k 
 //Time Complexity : o(n)
 //Space Complexity : O(h)
 class Solution {
