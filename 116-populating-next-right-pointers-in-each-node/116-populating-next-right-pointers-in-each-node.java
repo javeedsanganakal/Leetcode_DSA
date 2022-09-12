@@ -22,9 +22,9 @@ class Node {
 */
 
 
-//Approach - 2 : Without Queue, prev, curr  , Best Approach ***
+//Approach - 3 : dfs
 //Time Complexity : O(n)
-//Space Complexity : O(1)
+//Space Complexity : O(h)
 class Solution {
     public Node connect(Node root) {        
         if(root == null) return null;
