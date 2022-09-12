@@ -22,7 +22,7 @@ class Node {
 */
 
 
-//Approach - 1.1: Queue, prev, curr 
+//Approach - 1.3: Queue, prev, curr  ***
 //Time Complexity : O(n)
 //Space Complexity : O(n)
 class Solution {
@@ -39,14 +39,10 @@ class Solution {
             Node prev = null;
             for(int i=0; i<size; i++){
                 Node curr = q.poll(); 
-                
-                if(prev!= null){
-                    //Pointing next node
-                    prev.next = curr;
-                }
+                curr.next = prev;
                 //add the childrens
-                if(curr.left != null) q.add(curr.left);
-                if(curr.right != null) q.add(curr.right);
+                if(curr.left != null) q.add(curr.right);
+                if(curr.right != null) q.add(curr.left);
                 prev = curr;       
             }
          }
