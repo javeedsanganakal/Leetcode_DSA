@@ -22,31 +22,36 @@ class Node {
 */
 
 
-//Approach - 1.3: Queue, prev, curr  ***
+//Approach - 2 : Without Queue, prev, curr  , Best Approach ***
 //Time Complexity : O(n)
-//Space Complexity : O(n)
+//Space Complexity : O(1)
 class Solution {
-    public Node connect(Node root) {
+    public Node connect(Node root) {        
+        //if root is null , return null node
+        if(root == null) return null; 
         
-        if(root == null) return null;
-        
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
-        
-        
-        while(!q.isEmpty()){
-            int size = q.size();
-            Node prev = null;
-            for(int i=0; i<size; i++){
-                Node curr = q.poll(); 
-                curr.next = prev;
-                //add the childrens
-                if(curr.left != null) q.add(curr.right);
-                if(curr.right != null) q.add(curr.left);
-                prev = curr;       
-            }
-         }
-         
-         return root;
+        //level nodefor iterating each node
+        Node level = root;
+
+        //we will iterate til last child, i.e level.left != null
+        while(level.left != null){
+            
+            //root ==> level ==> curr // node 1
+            //Intialize curr for every level
+            Node curr = level;
+
+            //loop every level
+            while(curr != null){               
+                curr.left.next = curr.right;               
+                //except last node 
+                if(curr.next != null){
+                  curr.right.next = curr.next.left;
+                }                   
+                curr = curr.next;
+            }            
+            //move to next level
+            level = level.left;                
+        }    
+     return root;
     }
 }
