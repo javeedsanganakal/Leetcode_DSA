@@ -22,27 +22,24 @@ class Node {
 */
 
 
-//Approach - 3 : DFS
+//Approach - 2 : Without Queue, prev, curr  , Best Approach ***
 //Time Complexity : O(n)
-//Space Complexity : O(h)
+//Space Complexity : O(1)
 class Solution {
-    public Node connect(Node root) {
+    public Node connect(Node root) {        
         if(root == null) return null;
-        dfs(root);
+        dfs(root.left, root.right);
         return root;
-    }  
-    
-    private void dfs(Node root){
-        if(root.left == null) return;
+    }
+    private void dfs(Node left, Node right){
+        //base
+        if(left == null) return;
         
-        root.left.next = root.right;
-        
-        if(root.next != null){
-            root.right.next = root.next.left;
-        }
-        
-        dfs(root.left);
-        dfs(root.right);
+        left.next = right;
+        //logic
+        dfs(left.left, left.right);
+        dfs(left.right, right.left);
+        dfs(right.left, right.right);
         
     }
 }
