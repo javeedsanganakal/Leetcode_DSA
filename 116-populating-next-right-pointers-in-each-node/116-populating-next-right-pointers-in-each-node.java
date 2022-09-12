@@ -22,7 +22,7 @@ class Node {
 */
 
 
-//Approach - 1: Queue, prev, curr 
+//Approach - 1.1: Queue, prev, curr 
 //Time Complexity : O(n)
 //Space Complexity : O(n)
 class Solution {
@@ -32,13 +32,15 @@ class Solution {
         
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        Node prev = null;
+        
         
         while(!q.isEmpty()){
             int size = q.size();
+            Node prev = null;
             for(int i=0; i<size; i++){
                 Node curr = q.poll(); 
-                if(i!=0){
+                
+                if(prev!= null){
                     //Pointing next node
                     prev.next = curr;
                 }
