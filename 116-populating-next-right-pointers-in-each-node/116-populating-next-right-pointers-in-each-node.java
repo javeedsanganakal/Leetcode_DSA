@@ -22,7 +22,7 @@ class Node {
 */
 
 
-//Approach - 3 : dfs
+//Approach - 3.1 : dfs
 //Time Complexity : O(n)
 //Space Complexity : O(h)
 class Solution {
