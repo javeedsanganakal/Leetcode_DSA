@@ -1,4 +1,4 @@
-//Approach - 1:  Botton Up approach
+//Approach - 2:  Botton Up approach
 //Time Complexity : O(mn);
 //Space Complexity : O(1)
 
