@@ -6,6 +6,9 @@
  * }
  */
 
+//Approach - 1: low = 0; high=1 =>reader.get(high) < target)  high *= 2=> Binay Search
+//Time Complexity : O(logn)
+//Space Complexity : o(1)
 class Solution {
     public int search(ArrayReader reader, int target) {
         
@@ -15,6 +18,7 @@ class Solution {
         while(reader.get(high) < target){
             high *= 2;
         }
+        
         while(low<=high){
             int mid = low + (high-low)/2 ;
             if(reader.get(mid) == target){
