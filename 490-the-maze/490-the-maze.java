@@ -1,6 +1,6 @@
-//Approach - 1: BFS; Use Queue add start 0,1; mark visited; pop and check all 4 directions
+//Approach - 2: DFS; call dfs(maze, start, destinaion)
 //Time Complexity : O(k*mn) ==> O(mn)
-//Space Complexity : O(n) Queue
+//Space Complexity : O(n) // reucrsion in stack
 
 class Solution {
     int [][] dirs;int m,n;
