@@ -1,4 +1,4 @@
-//Approach -  : BFS; Use Queue add start0,1; mark visited; pop and check all 4 directions
+//Approach - 1: BFS; Use Queue add start0,1; mark visited; pop and check all 4 directions
 //Time Complexity : O(k*mn) ??
 //Space Complexity : O(mn)
 
