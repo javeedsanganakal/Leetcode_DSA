@@ -1,3 +1,6 @@
+//Approach - 1: 2 stacks-> st and minStack, minValue = Infinity
+//Time Complexity : O(1) 
+//Space Complexity : 
 class MinStack {
     
     private Stack<Integer> st;
