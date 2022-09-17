@@ -1,35 +1,34 @@
-//Approach - 1 : Binary Search
+//Approach - 1 : Binary Search, go unsorted side
 //Time Complexity : O(logn)
 //Space Complexity : O(1)
 class Solution {
     public int findMin(int[] nums) {
-        int result = nums[0];
-        
-        int l = 0;
-        int h = nums.length-1;
+
+        if(nums == null || nums.length == 0) return 0;
+        int low = 0;
+        int high = nums.length-1;
 
         
-        while(l<=h){
+        while(low<=high){
             
-            //if sorted 
-            if(nums[l] < nums[h]){
-                result = Math.min(result, nums[l]);
-                return result;
+            //if array is sorted
+            if(nums[low] < nums[high]) return nums[low];
+            int mid = low + (high-low)/2;
+            
+            //
+            if((mid ==0 ||nums[mid] < nums[mid-1]) && 
+               (mid == nums.length-1 || nums[mid] < nums[mid+1])){
+                return nums[mid];
             }
-            
-            int mid = l+(h-l)/2;
-            
-            result = Math.min(result, nums[mid]);
-            
-            if(nums[l] <= nums[mid]){
-                //search right
-                l = mid+1;
+            else if(nums[low] <= nums[mid]){
+                //left sorted
+                low = mid+1;
             }
             else{
-                //Search left
-                h = mid-1;
+                high = mid-1;
             }
+            
         }
-          return result;                                  
+          return 1;                                  
     }
 }
