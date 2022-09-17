@@ -22,6 +22,6 @@ class Solution {
                 low = mid+1;
             }
         }
-        return -1;
+        return 1; // return -1 also works
     }
 }
