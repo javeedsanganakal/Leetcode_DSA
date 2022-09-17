@@ -1,31 +1,33 @@
-//Approach - 1: 2 HashMaps , sMap , tMap , map eachother and check
+//Approach - 2: 2 Arrays , sArr , tArr , ascii value char -' '; gives index
 //Time Complexity : O(n) length of the string
 //Space Complexity : O(1)==> O(26) alphabets
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         
         if(s.length() != t.length()) return false;
-        HashMap<Character, Character> sMap = new HashMap<>();
-        HashMap<Character, Character> tMap = new HashMap<>();
+        
+        char[] sMap = new char[256]; // number of ascii values;
+        char[] tMap = new char[256];
+
         
         for(int i=0; i<s.length(); i++){
             char sChar = s.charAt(i);
             char tChar = t.charAt(i);
             
             //sMap
-            if(sMap.containsKey(sChar)){
-                if(sMap.get(sChar) != tChar) return false;
+            if(sMap[sChar - ' '] != 0){
+                if(sMap[sChar - ' '] != tChar) return false;
             }
             else{
-                sMap.put(sChar, tChar);
+                sMap[sChar - ' '] =  tChar;
             }
             
             //tMap
-            if(tMap.containsKey(tChar)){
-                if(tMap.get(tChar) != sChar) return false;
+            if(tMap[tChar - ' '] != 0){
+                if(tMap[tChar - ' '] != sChar) return false;
             }
             else{
-                tMap.put(tChar, sChar);
+                tMap[tChar-' '] =  sChar;
             }
         }
         return true;
