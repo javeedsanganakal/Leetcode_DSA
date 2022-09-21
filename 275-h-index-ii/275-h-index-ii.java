@@ -1,5 +1,5 @@
-//Approach - 1: Linear and Binary Search 
-//Time Complexity : O(nlogn)
+//Approach - 1: Linear
+//Time Complexity : O(n)
 //Space Complexity : O(1)
 
 
