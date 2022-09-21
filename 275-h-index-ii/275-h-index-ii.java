@@ -4,7 +4,6 @@
 
 
 //Notes
-
 class Solution {
     public int hIndex(int[] citations) {
          if(citations == null || citations.length == 0) return 0;
@@ -26,6 +25,7 @@ class Solution {
             }
         }
         //[0,0,0,0] == [4,3,2,1] no diff<=citations[i] will match
+        //[100] == o/p : 1
         return n-low;
     }
 }
