@@ -28,14 +28,17 @@ class Solution {
         reverse(nums,i+1,n-1);
     }
     private void swap(int [] nums, int i, int j){
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
+        // int temp = nums[i];
+        // nums[i] = nums[j];
+        // nums[j] = temp;
         
         // without using temp variable
-        // nums[i] = nums[i] + nums[j]; // 4 and 5 == 9
-        // nums[j] = nums[i] - nums[j]; // 9 -5 == 4
-        // nums[i] = nums[i] - nums[j]; // 9-4 == 5
+        if(i!=j){
+        nums[i] = nums[i] + nums[j]; // 4 and 5 == 9
+        nums[j] = nums[i] - nums[j]; // 9 -5 == 4
+        nums[i] = nums[i] - nums[j]; // 9-4 == 5
+        }
+        
     }
     
     private void reverse(int [] nums, int left, int right){
