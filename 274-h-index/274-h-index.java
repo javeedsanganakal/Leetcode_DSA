@@ -1,6 +1,6 @@
 //Approach - 2: Linear and Without Sorting by using Bucket Sort concept, Just sort in range
-//Time Complexity : O(nlogn)
-//Space Complexity : O(1)
+//Time Complexity : O(n)
+//Space Complexity : O(n)
 
 
 
