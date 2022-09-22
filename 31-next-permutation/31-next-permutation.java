@@ -20,7 +20,6 @@ class Solution {
             while(nums[i] >= nums[j]){
                 j--;
             }
-            
             //swap i and j
             swap(nums,i,j);
         }
@@ -32,6 +31,11 @@ class Solution {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+        
+        // without using temp variable
+        // nums[i] = nums[i] + nums[j]; // 4 and 5 == 9
+        // nums[j] = nums[i] - nums[j]; // 9 -5 == 4
+        // nums[i] = nums[i] - nums[j]; // 9-4 == 5
     }
     
     private void reverse(int [] nums, int left, int right){
