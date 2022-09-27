@@ -8,6 +8,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+//Approach - 1: 3 Pointers, prev = null, curr = head, fast = head.next
+//Time Complexity : O(n)
+//Space Complexity : O(1)
 
 class Solution {
     public ListNode reverseList(ListNode head) {
