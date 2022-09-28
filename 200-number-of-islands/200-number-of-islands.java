@@ -1,6 +1,6 @@
-//Approach - 1: bfs, queue
-//Time Complexity : O(m*n)  ==> 2mn
-//Space Complexity : Min(m,n)
+//Approach - 1: dfs 
+//Time Complexity : O(M×N) where MM is the number of rows and NN is the number of columns.
+//Space Complexity : O(m*n) worst case O(M \times N)O(M×N) in case that the grid map is filled with lands where DFS goes by M \times NM×N deep.
 
 class Solution {
      int m;
