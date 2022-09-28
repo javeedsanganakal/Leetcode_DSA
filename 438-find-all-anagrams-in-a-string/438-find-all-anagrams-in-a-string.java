@@ -1,3 +1,6 @@
+//Approach- 2 : Two HaspMap, Two Pointers, Sliding Window
+//Time Complexity : O(m)
+//Space : Complexity : O(1) // In worst case O(26) alphabets 
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> result = new ArrayList<>();
@@ -16,18 +19,15 @@ class Solution {
         }
         
 
-        if(pMap.equals(sMap)) {
-            
+        if(pMap.equals(sMap)) {            
             result.add(0); // found at 0 index if both maps are equal
         } 
             
         int slow = 0;
         //Fast = j
-        for(int j = p.length(); j < s.length(); j++){
-            
+        
+        for(int j = p.length(); j < s.length(); j++){    
             char fastChar = s.charAt(j);
-
-            
             if(!sMap.containsKey(fastChar) ){
                 sMap.put(fastChar, sMap.getOrDefault(fastChar, 0) +1);
             }
@@ -35,8 +35,8 @@ class Solution {
                 sMap.put(fastChar, sMap.get(fastChar) +1);
             }
             
-            
             char slowChar = s.charAt(slow);
+            
             sMap.put(slowChar, sMap.get(slowChar) -1);
             
             if(sMap.get(slowChar) == 0){
@@ -45,10 +45,7 @@ class Solution {
             
             slow++;
             
-           
-            System.out.println(sMap);
-            if(pMap.equals(sMap)) result.add(slow);
-            
+            if(pMap.equals(sMap)) result.add(slow);  
         }
         return result;
     }
