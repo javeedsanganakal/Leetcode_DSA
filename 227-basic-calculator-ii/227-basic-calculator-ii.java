@@ -44,7 +44,7 @@ class Solution {
             
         }
         int result = 0; 
-        
+
         while(!st.empty()){
             result += st.pop();
         }
