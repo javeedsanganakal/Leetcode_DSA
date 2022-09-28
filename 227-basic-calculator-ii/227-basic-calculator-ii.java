@@ -6,11 +6,12 @@ class Solution {
 
         if(s == null || s.length()  == 0) return 0;
         
-        //Assume our last is + before first integer
-        char lastSign = '+';
         
-        //curr value
+        
+        //Intailly LastSign and curr + and 0  asssume
+        char lastSign = '+';
         int curr = 0;
+        
         Stack<Integer> st = new Stack<>();
 
 
@@ -18,13 +19,17 @@ class Solution {
             
             char c = s.charAt(i);
             
+            
+            //Case 1: Digit
+            //if its  digit assign to curr
             if(Character.isDigit(c)){
                 //ASCII Value of 3 and 0 // 51 - 48
-                curr = curr*10 + c-'0';
+                curr = curr*10 + c-'0'; // if s = "42"
             }
             
         
             
+            //Case 2: Operator
             if((!Character.isDigit(c) && c != ' ') || i == s.length()-1){
                 if(lastSign == '+'){
                     st.push(curr);
