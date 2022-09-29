@@ -1,3 +1,7 @@
+//Approach - 1: BFS
+//TTime Complexity:O(M2×N), where MM is the length of each word and NN is the total number of words in the input word list.
+//Space Complexity : O(M2×N)
+
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         HashSet<String> set = new HashSet(wordList);
