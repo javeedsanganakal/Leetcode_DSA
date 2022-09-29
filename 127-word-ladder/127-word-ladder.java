@@ -4,16 +4,25 @@
 
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        
+        //add all words in the list set
         HashSet<String> set = new HashSet(wordList);
+        
+        //if list doesn't contain endWord
         if(!set.contains(endWord)) return 0;
+        
+        //for BFS use Queue
         Queue<String> queue = new LinkedList<>();
         queue.offer(beginWord);
         int level = 1;
             
         while(!queue.isEmpty()){
             int size = queue.size();
+            
             for(int i = 0 ; i < size ; i++){
+                //poll the word
                 String currentWord = queue.poll();
+                
                 char currArray []= currentWord.toCharArray();
                 
                 for(int j = 0 ; j < currArray.length ; j++){
