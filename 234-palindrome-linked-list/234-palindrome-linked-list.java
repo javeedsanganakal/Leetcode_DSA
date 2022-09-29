@@ -8,6 +8,10 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+
+//Time complexity : O(n)
+//Space complexity : O(n)
 class Solution {
     public boolean isPalindrome(ListNode head) {
         List<Integer> vals = new ArrayList<>();
