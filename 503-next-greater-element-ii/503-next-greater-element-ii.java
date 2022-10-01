@@ -10,8 +10,7 @@ public class Solution {
         Arrays.fill(res,-1);
         
         Stack<Integer> st = new Stack<>();
-        
-        
+ 
         for(int i=0; i<2*n; i++){
             while(!st.isEmpty() && nums[i%n] > nums[st.peek()]){
                 int popedIndex = st.pop();
