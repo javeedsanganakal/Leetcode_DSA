@@ -1,5 +1,5 @@
 //Approach - 1: Brute Force, 2 Arrays
-//Time Complexity : O(n^2) , time limit exceeded
+//Time Complexity : O(n^2)
 //Space Complexity :  O(n); extra space for 2n array
 
 public class Solution {
