@@ -11,30 +11,73 @@
 
 
 //Time complexity : O(n)
-//Space complexity : O(n)
+//Space complexity : O(1)
 class Solution {
-    public boolean isPalindrome(ListNode head) {
-        List<Integer> vals = new ArrayList<>();
 
-        // Convert LinkedList into ArrayList.
-        ListNode currentNode = head;
-        while (currentNode != null) {
-            vals.add(currentNode.val);
-            currentNode = currentNode.next;
-        }
+   public boolean isPalindrome(ListNode head) {
 
-        // Use two-pointer technique to check for palindrome.
-        int front = 0;
-        int back = vals.size() - 1;
-        while (front < back) {
-            // Note that we must use ! .equals instead of !=
-            // because we are comparing Integer, not int.
-            if (!vals.get(front).equals(vals.get(back))) {
-                return false;
-            }
-            front++;
-            back--;
-        }
-        return true;
-    }
+       if(head==null) return true;
+
+       ListNode slow= head;
+
+       ListNode fast=head.next;
+
+       while(fast!=null && fast.next!=null)
+
+       {
+
+           fast=fast.next.next;
+
+           slow=slow.next;
+
+       }
+
+       ListNode head2=slow.next;
+
+       slow.next=null;
+
+       ListNode prev=null;
+
+       ListNode cur= head2;
+
+       ListNode next;
+
+       while(cur!=null)
+
+       {
+
+           next=cur.next;
+
+           cur.next=prev;
+
+           prev=cur;
+
+           cur=next;
+
+       }
+
+       head2=prev;
+
+       while(head!=null && head2!=null)
+
+       {
+
+           if(head.val != head2.val) return false;
+
+           else
+
+           {
+
+               head=head.next;
+
+               head2= head2.next;
+
+           }
+
+       }
+
+       return true;
+
+   }
+    
 }
