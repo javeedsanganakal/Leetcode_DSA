@@ -1,3 +1,7 @@
+//Approach - 1: Stack
+//Time Complexity : O(n)
+//Space Complexity : O(n)
+
 class Solution {
     public int[] exclusiveTime(int n, List<String> logs) {
         
@@ -18,15 +22,13 @@ class Solution {
             
             if(strArr[1].equals("start")){
                 if(!st.isEmpty()){
-                    result[st.peek()] = result[st.peek()] + (curr-prev);
+                    result[st.peek()] += (curr-prev);
                 }
                 prev = curr;
                 st.push(functionCall);
             }
             else{
-                result[st.peek()] = result[st.peek()] + (curr+1-prev);
-                
-                st.pop();
+                result[st.pop()] += (curr+1-prev);
                 prev = curr + 1;  
             } 
         }
