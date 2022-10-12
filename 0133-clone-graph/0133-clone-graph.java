@@ -17,7 +17,7 @@ class Node {
     }
 }
 */
-//Approach - 1: DFS
+//Approach - 2: DFS
 //Time Complexity : O(V+E) ; vertices and edges
 //Space Complexity : O(V); vertices
 
