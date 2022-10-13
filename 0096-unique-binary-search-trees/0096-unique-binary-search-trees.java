@@ -1,0 +1,23 @@
+//Approach - 1: DP
+//Time Complexity : O(n^2)
+//Space Complexity : O(n)
+class Solution {
+    public int numTrees(int n) {
+        
+        int [] dp = new int[n+1];
+        
+        //for 0 ; 1 tree
+        dp[0] = 1;
+        // for 1; 1 tree
+        dp[1] = 1;
+        
+        
+        
+        for(int i=2; i<=n; ++i){
+            for(int j=1; j<=i; ++j){
+                dp[i] = dp[i] + dp[j-1] * dp[i-j];
+            }
+        }
+        return dp[n];
+     }
+}
