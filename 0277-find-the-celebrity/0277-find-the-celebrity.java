@@ -1,33 +1,28 @@
 /* The knows API is defined in the parent class Relation.
       boolean knows(int a, int b); */
-//Approach - 1: indegrees
+//Approach - 2: Linear
 //Time Complexity : O(n^2)
-//Space Complexity : O(n)
+//Space Complexity : O(1)
 public class Solution extends Relation {
     public int findCelebrity(int n) {
-        int [] indegrees = new int[n];
         
-        for(int i=0; i<n; i++){
-            for(int j=0; j<n; j++){
-                
-                //if A knows B
-                //B is Celeb
-                if(i!=j){
-                    if(knows(i,j)){
-                        indegrees[i]--;
-                        indegrees[j]++;   
-                    }
-                }
+        int celeb = 0;
+        
+        for(int i=1; i<n; i++){
+            //celeb knows i th person, then i is the celeb
+            if(knows(celeb,i)){
+                celeb = i;
             }
         }
-        
-        System.out.println(indegrees);
+
+        //Potential celeb
         for(int i=0; i<n; i++) {
-               if(indegrees[i] == n-1){
-                   return i;
+               if(celeb != i){
+                   //celeb knows i th person or 
+                   // i th person dont know the celeb
+                   if(knows(celeb, i) || !knows(i, celeb)) return -1;
                }
         }
-        
-        return -1;
+        return celeb;
     }
 }
