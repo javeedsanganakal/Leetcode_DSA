@@ -1,7 +1,7 @@
 /* The knows API is defined in the parent class Relation.
       boolean knows(int a, int b); */
 //Approach - 2: Linear
-//Time Complexity : O(n^2)
+//Time Complexity : O(n)
 //Space Complexity : O(1)
 public class Solution extends Relation {
     public int findCelebrity(int n) {
